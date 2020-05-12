@@ -2,6 +2,9 @@ body {
   background-color: #ffffff;
   font-family: Roboto, sans-serif;
   color: #61a11e;
+  height: 100%;
+  margin: 0;
+
 }
 
 h6 {
@@ -23,7 +26,7 @@ a.navbar-brand {
   justify-content: center;
   -webkit-box-align: center;
   align-items: center;
-  height: 147vh;
+  margin-top: 120px;
 }
 
 .box {
@@ -130,6 +133,11 @@ li.list-group-item.d-flex.justify-content-between.lh-condensed {
 
 .devoured-card {
   border: 2px solid #61a11e;
+}
+
+.footer {
+  height: 50px;
+  margin-top: -50px;
 }
 
 

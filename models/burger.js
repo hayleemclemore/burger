@@ -10,14 +10,19 @@ var burger = {
     });
   },
   // Insert function
-  insertOne: function(addon, cb) {
-    orm.insertOne("burgers", "burger_name", addon, function(res) {
+  insertOne: function(burger_name, cb) {
+    orm.insertOne("burgers", "burger_name", burger_name, function(res) {
       cb(res);
     });
   },
   // Update function
-  updateOne: function(colVal, id, cb) {
+  update: function(colVal, id, cb) {
     orm.updateOne(colVal, id, function(res) {
+      cb(res);
+    });
+  },
+  delete: function(id, cb) {
+    orm.delete('burgers', id, function(res) {
       cb(res);
     });
   }

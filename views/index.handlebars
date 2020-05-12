@@ -49,11 +49,18 @@
         <h3>Devour List</h3>
   
             {{#each burgers}}
-            {{#if this.devoured}}
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-            <h6>{{this.burger_name}}</h6>
-        </li>
-            {{/if }}
+              {{#if this.devoured}}
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <h6>{{this.burger_name}}</h6>
+                    <form action="/deleteOne/{{this.id}}" method="DELETE">
+                      <input type="hidden" name="id" value="{{this.id}}">
+                      <input type="hidden" name="devoured" value="1">
+                      <button class="btn btn-sm btn-outline m-1 devour-btn float-right">Delete<i class="fas fa-utensils
+                          ml-2"></i>
+                      </button>
+                    </form>
+                </li>
+              {{/if }}
             {{/each }}
 
           </div>

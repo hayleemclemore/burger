@@ -11,7 +11,8 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: burgers
     };
-    console.log(hbsObject);
+
+    //console.log(hbsObject);
     // res.send(burgers);
     res.render("index", hbsObject);
   });
@@ -19,6 +20,7 @@ router.get("/", function(req, res) {
 
 router.post("/insertOne", function(req, res) {
     console.log(req.body);
+   // {burger_name: 'blue cheese'}
   burger.insertOne(req.body.burger_name, function(addon) {
     // Send back the ID of the new quote
     res.redirect("/");
@@ -28,14 +30,33 @@ router.post("/insertOne", function(req, res) {
 //POST REQUEST - updating if burger has been devoured or not
 router.post("/updateOne/:id", function(req, res) {
   // var condition = "id = " + req.params.id;
-var colVal = "id";
-var id = req.params.id;
-  burger.updateOne(colVal, id, function()
+  var colVal = "id";
+
+  var id = req.params.id;
+  burger.update(colVal, id, function()
     {
       res.redirect("/");
     });
     }
   );
+
+  router.get("/deleteOne/:id", function(req, res) {
+    console.log('we hit hte delete route!!', req.params);
+
+    var condition = "id = " + req.params.id;
+    var colVal = "id";
+  
+    var id = req.params.id;
+    burger.delete(id, function()
+      {
+        res.redirect("/");
+      });
+       });
+
+
+
+
+  
 
 
 // Export routes for server.js to use.
