@@ -2,15 +2,10 @@
 
 ### Overview
 
-This full-stack application is a burger logger using MySQL, Node, Express, Handlebars and a homemade ORM.
-
-This is my very first full stack application.
+This full-stack application is a burger logger using MySQL, Node, Express, Handlebars and a homemade ORM. This is my very first full stack application.
 
 
-Test the app: [Here](https://my-friend-finder-app-1.herokuapp.com/)
-
-![Home Desktop View](./app/public/assets/images/mock-1@2x.png)
-![Survey Desktop View](./app/public/assets/images/mock-2@2x.png)
+Test the app: [Here](https://eat-da-burger-hm.herokuapp.com/)
 
 ## Requirements
 
